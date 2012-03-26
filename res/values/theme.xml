@@ -1,0 +1,12 @@
+<resources>
+    <style name="fuente">
+        <item name="android:textColor">#111177</item>
+    </style>
+    <style name="fuente.derecha">
+        <item name="android:gravity">left</item>
+        <item name="android:paddingLeft">30dp</item>
+        <item name="android:paddingBottom">3dp</item>
+        <item name="android:paddingTop">1dp</item>
+
+    </style>
+</resources>

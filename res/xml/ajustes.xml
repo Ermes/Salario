@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <PreferenceCategory 
+        android:title="Informacion Laboral">
+    </PreferenceCategory>
+        <ListPreference 
+            android:key="prefCategoria"
+            android:title="Clasificacion"
+            android:summary="Grupo profesional"
+            android:entries="@array/categoriaList"
+            android:entryValues="@array/categoriaListValues"
+            />
+         <ListPreference 
+            android:key="prefPagas"
+            android:title="Numero Pagas"
+            android:summary="pagas"
+            android:dialogTitle="Numero de pagas"
+            android:entries="@array/nPagasList"
+            android:entryValues="@array/nPagasList"
+            />       
+    
+    <PreferenceCategory 
+        android:title="Datos personales">
+    </PreferenceCategory>
+		<ListPreference
+		   android:key="hijos1"
+		   android:title="Total hijos"
+		   android:summary="Menores de 25 años con ingresos menores a 8000€"
+		   android:dialogTitle="Total Hijos" 
+		   android:entries="@array/hijosList"
+           android:entryValues="@array/hijosList"/>
+		<ListPreference
+		   android:key="hijos2"
+		   android:title="Hijos mayores de 25"
+		   android:summary="Mayores de 25 años con minusvalia e ingresos menores a 8000€"
+		   android:dialogTitle="Hijos mayores 25"
+		   android:entries="@array/hijosList"
+           android:entryValues="@array/hijosList"/>
+		<ListPreference
+		   android:key="hijos3"
+		   android:title="Hijos menores de 3"
+		   android:summary="Del total cuantos son menores de 3 años"
+		   android:dialogTitle="Hijos mayores 3"
+		   android:entries="@array/hijosList"
+           android:entryValues="@array/hijosList" />
+	
+</PreferenceScreen>
