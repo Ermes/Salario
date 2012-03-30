@@ -101,20 +101,21 @@ public class SalarioActivity extends Activity implements OnClickListener, OnKeyL
 		int max = Integer.parseInt(preferencias.getString("hijos2", "0"));
 		int min = Integer.parseInt(preferencias.getString("hijos3", "0"));
 		int cat = Integer.parseInt(preferencias.getString("prefCategoria","4"));
+		int lab = Integer.parseInt(preferencias.getString("sitLaboral", "1"));
 		//int n = Integer.parseInt(np.getSelectedItem().toString());
 		if ( totH >= min ) {
 		
-			pagas miSueldo = new pagas(a,n,totH,max,min,cat);
+			pagas miSueldo = new pagas(a,n,totH,max,min,cat,lab);
 			
 			IRPF.setText("IRPF : " + miSueldo.getIRPF() + "%");
-			deduccionSS.setText(miSueldo.deduccionSS() + " â‚¬");
-			baseIRPF.setText(miSueldo.BASE + " â‚¬");
-			deduccionFamiliar.setText(miSueldo.deduccionFamiliar() + " â‚¬");
-			IRPFanual.setText(miSueldo.aPagarIRPF() + " â‚¬");
-			netoMensual.setText(miSueldo.netoMensual() + " â‚¬");
+			deduccionSS.setText(miSueldo.deduccionSS() + " Û");
+			baseIRPF.setText(miSueldo.BASE + " Û");
+			deduccionFamiliar.setText(miSueldo.deduccionFamiliar() + " Û");
+			IRPFanual.setText(miSueldo.aPagarIRPF() + " Û");
+			netoMensual.setText(miSueldo.netoMensual() + " Û");
 			if ( n > 12 ) {
 				lPagaExtra.setVisibility(View.VISIBLE);
-				pagaExtra.setText(miSueldo.pagaExtra() + " â‚¬");
+				pagaExtra.setText(miSueldo.pagaExtra() + " Û");
 			} else {
 				lPagaExtra.setVisibility(View.INVISIBLE);
 				pagaExtra.setText("");

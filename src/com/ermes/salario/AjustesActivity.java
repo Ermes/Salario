@@ -25,7 +25,13 @@ public class AjustesActivity extends PreferenceActivity implements OnSharedPrefe
 			Preference pref = pScreen.getPreference(i);
 			if (pref instanceof ListPreference) {
 				ListPreference listPref = (ListPreference) pref;
-				sum =  listPref.getEntry()!= null ? (pref.getSummary() + ": " + listPref.getEntry()) : (pref.getSummary() + ": ");
+				if ( listPref.getKey().equals("prefCategoria") ) {
+					sum = listPref.getEntry()!= null ? (listPref.getEntry().toString()) : (pref.getSummary() + ": ");
+				} else if ( listPref.getKey().equals("sitLaboral") ) {
+					sum = listPref.getEntry()!= null ? (listPref.getEntry().toString()) : (pref.getSummary() + ": ");
+				} else {
+					sum =  listPref.getEntry()!= null ? (pref.getSummary() + ": " + listPref.getEntry()) : (pref.getSummary() + ": ");
+				}
 				pref.setSummary(sum);
 			}
 		}
@@ -64,15 +70,16 @@ public class AjustesActivity extends PreferenceActivity implements OnSharedPrefe
 		Preference preferencia = findPreference(key);
 		if (preferencia instanceof ListPreference) {
 			ListPreference listPref = (ListPreference) preferencia;
-			String [] enunciado = ((String) preferencia.getSummary()).split(":");
-			sum = enunciado[0] + ": " + listPref.getEntry();
+			if ( key.equals("prefCategoria") ) {
+				sum = listPref.getEntry().toString();
+			} else if ( key.equals("sitLaboral") ) {
+				sum = listPref.getEntry().toString();
+			} else {
+				String [] enunciado = ((String) preferencia.getSummary()).split(":");
+				sum = enunciado[0] + ": " + listPref.getEntry();
+			}
 			preferencia.setSummary(sum);
 			
-		}
-
-		
+		}		
 	}
-
-
-
 }

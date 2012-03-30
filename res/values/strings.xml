@@ -4,11 +4,10 @@
     <string name="nPagas">Numero de Pagas</string>
     <string name="app_name">Salario Neto</string>
     <string name="acerca1">"<i><b>Versión 1.0.1</b></i>"</string>
-    <string name="acerca2">- Agregado calculo de reduccion por rendimientos de trabajo de caracter general\n
+    <string name="acerca2">- Agregado calculo reduccion por rtos trabajo de caracter general\n
         - Redondeo del tipo de IRPF\n
-        - Deduccion del art.80 bis de la LIRPF\n\n
-        <i>Versión 1.0</i>\n
-        ----------------\n
+        - Deduccion del art.80 bis de la LIRPF\n
+        <i><b>Versión 1.0</b></i>
         Esta es una aplicación para calcular el sueldo neto y bruto 
         en funcion a un salarario anual, numero de pagas, situacion familiar, etc... 
         Esta actualizada a los tipos de IRPF para el 2012\n\n
@@ -25,6 +24,9 @@
     <string name="categoria4">Ayudantes no Titulados</string>  
     <string name="categoria5">Oficiales Administrativos</string>  
     <string name="categoria6">Subalternos</string>  
-    <string name="categoria7">Auxiliares Administrativos</string>  
-
+    <string name="categoria7">Auxiliares Administrativos</string>
+    <string name="laboral1">Empleado</string>  
+    <string name="laboral2">Pensionista de la Seg. Social</string>  
+    <string name="laboral3">Desempleado</string>  
+    <string name="laboral4">Otras situaciones</string>  
 </resources>

@@ -17,7 +17,15 @@
             android:dialogTitle="Numero de pagas"
             android:entries="@array/nPagasList"
             android:entryValues="@array/nPagasList"
-            />       
+            />     
+         <ListPreference 
+            android:key="sitLaboral"
+            android:title="Situacion Laboral"
+            android:summary="Situacion laboral en el momento del contrato"
+            android:dialogTitle="Situacion laboral"
+            android:entries="@array/laboralList"
+            android:entryValues="@array/laboralListValues"
+            />   
     
     <PreferenceCategory 
         android:title="Datos personales">

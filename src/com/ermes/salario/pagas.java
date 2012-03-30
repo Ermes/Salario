@@ -1,7 +1,9 @@
 package com.ermes.salario;
 
 public class pagas {
-	private  int min25,mas25,min3,cat;
+	private  int min25,mas25,min3,cat,lab;
+	private static int PENSIONISTA = 2;
+	private static int DESEMPLEADO = 3;
 	public static int SITUACION = 3;
 	public  int N_PAGAS;
 	public  int BRUTO;
@@ -11,8 +13,16 @@ public class pagas {
 	public final double RNT;
 	public final double RNTREDU;
 	public final double BASE;
+	public final double REDU;
 	public static final int MIN_PERSONAL = 5151;
 	public static final int [] DESCENDIENTES = {0,1836,3876,7548,11730,15912};
+	public static final double [][] SITUACION_FAMILIAR =
+	{
+		{0,0,0},
+		{0,13662.00,15617.00},
+		{13335.00,14774.00,16952.00},
+		{11162.00,11888.00,12519.00}		
+	};
 	public static final double[][] T_IRPF = 
 		{
 			{0,0},
@@ -36,18 +46,20 @@ public class pagas {
 		};
 	
 	///////// ---------- CONSTRUCTOR ------------ ////////////
-	public pagas (int b,int nP,int m25,int x25,int m3, int c) {
+	public pagas (int b,int nP,int m25,int x25,int m3, int c, int l) {
 		N_PAGAS = nP;
 		min25 = m25;
 		mas25 = x25;
 		min3 = m3;
 		cat = c;
+		lab = l;
 		BRUTO = b;
 		BRUTO_MENSUAL = b / nP;
-		RNT = Math.round(BRUTO - deduccionSS());
+		RNT = trunca(BRUTO - deduccionSS());
 		RED20 = rtosTrabajo();
 		RNTREDU = trunca((RNT - RED20) > 0 ? RNT - RED20 : 0);
-		BASE = RNTREDU;
+		REDU = reduccionLaboral();
+		BASE = RNTREDU - REDU;
 	}
 	
 	///////// ---------- METODOS ------------ ////////////
@@ -61,6 +73,15 @@ public class pagas {
 			rtos = 2652;
 		}
 		return trunca(rtos);
+	}
+	public double reduccionLaboral() {
+		if ( lab == PENSIONISTA) {
+			return 600;
+		} else if ( lab == DESEMPLEADO ) {
+			return 1200;
+		} else {
+			return 0;
+		}
 	}
 	
 	public  int getMIN_PERSONAL() {
@@ -79,7 +100,7 @@ public class pagas {
 	}
 
 	public double retencionIRPF() {
-		double baseIRPF = BASE ;
+		double baseIRPF = BASE;
 		double irpf=0;
 
 		for (int i = 1;i<6;i++){
@@ -115,11 +136,15 @@ public class pagas {
 		return 0;
 	}
 	public  double getIRPF() {
-		double anualIRPF = trunca(retencionIRPF() - deduccionFamiliar() - art80());
+		double irpfAnual = trunca(retencionIRPF() - deduccionFamiliar() - art80());
+		double limite = min43();
+		
+		double cuota = (irpfAnual > limite) ? limite : irpfAnual;
+		
 		if ( art80() > 0 ) {
-			return trunca( (anualIRPF)>0 ? trunca((anualIRPF)*100/BRUTO) : 0 );
+			return trunca( (cuota)>0 ? trunca((cuota)*100/BRUTO) : 0 );
 		} else {
-			return Math.round( (anualIRPF)>0 ? trunca((anualIRPF)*100/BRUTO) : 0 );
+			return Math.round( (cuota)>0 ? trunca((cuota)*100/BRUTO) : 0 );
 		}
 		
 	}
@@ -132,6 +157,11 @@ public class pagas {
 		} else {
 			return 0;
 		}
+	}
+	public double min43() {
+		int hijos = (mas25+min25 >=2) ? 2 : mas25+min25 ;
+		double limite = art80() + ( BRUTO - (SITUACION_FAMILIAR[SITUACION][hijos] + reduccionLaboral()) ) * 0.43;
+		return limite;
 	}
 	public  double netoMensual() {
 		double anualIRPF = aPagarIRPF();	
