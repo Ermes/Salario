@@ -5,10 +5,8 @@ import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.ListPreference;
-import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceScreen;
-import android.widget.Toast;
 
 public class AjustesActivity extends PreferenceActivity implements OnSharedPreferenceChangeListener {
 

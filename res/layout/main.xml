@@ -19,7 +19,7 @@
 	       	android:layout_width="fill_parent"
 	       	android:layout_height="wrap_content"
 	       	android:hint="Bruto anual"
-	       	android:numeric="integer"
+	       	android:numeric="decimal"
 	      	/>
 	     <Button 
 	       	android:id="@+id/btnCalcular"
@@ -48,7 +48,8 @@
 	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
 	        android:stretchColumns="1"
-	        android:paddingTop="20dp">
+	        android:paddingTop="20dp"
+	        >
 	        <TableRow>
 		        <TextView
 			       	android:id="@+id/txtIRPF" 
@@ -68,7 +69,7 @@
 	           	<TextView
 			       	android:id="@+id/txtDeduccionSS" 
 		      		style="@style/fuente.derecha"
-		      		/>
+					/>
 	        </TableRow>	              
 	        <TableRow>
 		        <TextView

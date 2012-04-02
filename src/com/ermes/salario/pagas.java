@@ -6,7 +6,7 @@ public class pagas {
 	private static int DESEMPLEADO = 3;
 	public static int SITUACION = 3;
 	public  int N_PAGAS;
-	public  int BRUTO;
+	public  double BRUTO;
 	public double BRUTO_MENSUAL;
 	public static final double SS = 6.35;
 	public final double RED20;
@@ -46,7 +46,7 @@ public class pagas {
 		};
 	
 	///////// ---------- CONSTRUCTOR ------------ ////////////
-	public pagas (int b,int nP,int m25,int x25,int m3, int c, int l) {
+	public pagas (double b,int nP,int m25,int x25,int m3, int c, int l) {
 		N_PAGAS = nP;
 		min25 = m25;
 		mas25 = x25;
@@ -129,7 +129,7 @@ public class pagas {
 	}
 	
 	public double aPagarIRPF() {
-		return BRUTO * getIRPF() / 100;
+		return trunca(BRUTO * getIRPF() / 100);
 	}
 	public double rendimientoNetoReducido() {
 		

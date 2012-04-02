@@ -25,7 +25,6 @@ public class SalarioActivity extends Activity implements OnClickListener, OnKeyL
 	TextView IRPF,netoMensual,pagaExtra,baseIRPF,deduccionFamiliar,deduccionSS,IRPFanual,lPagaExtra;
 	Button calcular;
 	TextView np;
-	private static final String BRUTO_DEF = "30000";
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -77,7 +76,11 @@ public class SalarioActivity extends Activity implements OnClickListener, OnKeyL
 	}
 	@Override
 	public void onClick(View v) {
+		if (anual.getText().toString().equals("")) {
+			Toast.makeText(this, "Debes rellenar el salario bruto anual", Toast.LENGTH_SHORT).show();
+		} else { 
 		accion();
+		}
 	}
 	@Override
 	public boolean onKey(View v, int keyCode, KeyEvent event) {
@@ -96,7 +99,7 @@ public class SalarioActivity extends Activity implements OnClickListener, OnKeyL
 		
 		SharedPreferences preferencias = PreferenceManager.getDefaultSharedPreferences(this);
 		int n = Integer.parseInt(preferencias.getString("prefPagas","12"));
-		int a = Integer.parseInt(anual.getText().toString());
+		double a = Double.parseDouble(anual.getText().toString());
 		int totH = Integer.parseInt(preferencias.getString("hijos1", "0"));
 		int max = Integer.parseInt(preferencias.getString("hijos2", "0"));
 		int min = Integer.parseInt(preferencias.getString("hijos3", "0"));
