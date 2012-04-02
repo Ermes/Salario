@@ -136,7 +136,7 @@ public class pagas {
 		return 0;
 	}
 	public  double getIRPF() {
-		double irpfAnual = trunca(retencionIRPF() - deduccionFamiliar() - art80());
+		double irpfAnual = trunca(retencionIRPF() - deduccionFamiliar());
 		double limite = min43();
 		
 		double cuota = (irpfAnual > limite) ? limite : irpfAnual;
