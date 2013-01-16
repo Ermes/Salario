@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/hoja2"
+    android:orientation="vertical"
+    android:paddingLeft="22dp"
+    android:paddingTop="40dp" >
+
+     <LinearLayout
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginBottom="5dp"
+         android:orientation="horizontal" >
+
+	     <EditText
+	         android:id="@+id/txtAnual"
+	         android:layout_width="fill_parent"
+	         android:layout_height="wrap_content"
+	         android:layout_weight="5"
+	         android:hint="Bruto anual"
+	         android:numeric="decimal"
+	         style="@style/fuente" />
+
+	     <Button
+	         android:id="@+id/btnCalcular"
+	         android:layout_width="fill_parent"
+	         android:layout_height="wrap_content"
+	         android:layout_marginLeft="20dp"
+	         android:layout_marginRight="20dp"
+	         android:layout_weight="5"
+	         android:text="Calcular"
+	         style="@style/fuente" />
+
+     </LinearLayout>
+        <LinearLayout 
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="horizontal" 
+		    
+	    > 
+	    <TextView
+	        android:id="@+id/txtNPagas"
+	        android:layout_width="wrap_content"
+	       	android:layout_height="wrap_content"
+	       	
+	        />
+
+     </LinearLayout>
+
+	    <TableLayout 
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:stretchColumns="1"
+	        android:paddingTop="20dp"
+	        >
+	        <TableRow>
+		        <TextView
+			       	android:id="@+id/txtIRPF" 
+			       	android:padding="1dp"
+			       	style="@style/fuente"
+		      	/>
+	           	<TextView
+		    	   	android:text="Seg.Social: 6.35%"
+					style="@style/fuente.derecha"
+		      		/>
+	        </TableRow>
+	        <TableRow>
+
+		        <TextView
+		            style="@style/fuente"
+		            android:padding="1dp"
+		            android:text="Deduccion SS" />
+
+	           	<TextView
+			       	android:id="@+id/txtDeduccionSS" 
+		      		style="@style/fuente.derecha"
+					/>
+	        </TableRow>	              
+	        <TableRow>
+		        <TextView
+			       	android:text="Base para IRPF" 
+			       	android:padding="1dp"
+			       	style="@style/fuente"
+		      	/>
+	           	<TextView
+			       	android:id="@+id/txtBaseIRPF" 
+		    	   	style="@style/fuente.derecha"
+		      		/>
+	        </TableRow>		        
+	        <TableRow>
+
+		        <TextView
+		            style="@style/fuente"
+		            android:padding="1dp"
+		            android:text="Deduc. familiar" />
+
+	           	<TextView
+			       	android:id="@+id/txtDeduccionFamiliar" 
+		    	   	style="@style/fuente.derecha"
+		      		/>
+	        </TableRow>		
+	       <TableRow>
+		        <TextView
+			       	android:text="IRPF anual" 
+			       	android:padding="1dp"
+			       	style="@style/fuente"
+		      	/>
+	           	<TextView
+			       	android:id="@+id/txtIRPFanual" 
+		    	   	style="@style/fuente.derecha"
+		      		/>
+	        </TableRow>	        
+	    </TableLayout>
+
+	    	<TableLayout
+	    	    android:layout_width="fill_parent"
+	    	    android:layout_height="wrap_content"
+	    	    android:layout_marginTop="@android:dimen/app_icon_size"
+	    	    android:stretchColumns="1" >
+
+	        	<TableRow>
+		            <TextView
+		                android:text="Neto Mensual: " 
+				       	android:padding="1dp"
+				       	style="@style/fuente"
+			      	/>
+				    <TextView
+					    android:id="@+id/txtNetoMensual"
+					    style="@style/fuente.derecha"
+					    />
+				</TableRow>
+	        	<TableRow>
+		            <TextView
+		                android:id="@+id/lblPagaExtra"
+		    			android:text="Paga Extra: " 
+				       	android:padding="1dp"
+				       	style="@style/fuente"
+			      	/>		
+				    <TextView
+				        android:id="@+id/txtPagaExtra"
+				        style="@style/fuente.derecha"
+				        />
+				 </TableRow>
+				    
+	    	</TableLayout>
+
+
+
+</LinearLayout>

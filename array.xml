@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="nPagasList">
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+    </string-array>
+    <string-array name="categoriaList">
+		<item>@string/categoria1</item>	
+        <item>@string/categoria2</item>
+		<item>@string/categoria3</item>	
+        <item>@string/categoria4</item>
+		<item>@string/categoria5</item>	
+        <item>@string/categoria6</item>
+		<item>@string/categoria7</item>	
+    </string-array>
+    <string-array name="categoriaListValues">
+		<item>1</item>	
+        <item>2</item>
+		<item>3</item>	
+        <item>4</item>
+		<item>5</item>	
+        <item>6</item>
+		<item>7</item>	
+    </string-array>
+        <string-array name="hijosList">
+		<item>0</item>
+		<item>1</item>	
+        <item>2</item>
+		<item>3</item>	
+        <item>4</item>
+		<item>5</item>	
+        <item>6</item>
+     
+    </string-array>
+    <string-array name="laboralList">
+        <item>@string/laboral1</item>
+        <item>@string/laboral2</item>
+        <item>@string/laboral3</item>
+        <item>@string/laboral4</item>
+    </string-array>
+    <string-array name="laboralListValues">
+ 		<item>1</item>	
+        <item>2</item>
+		<item>3</item>	
+        <item>4</item>       
+    </string-array>
+    
+</resources>

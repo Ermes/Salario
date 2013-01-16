@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="nPagas">Numero de Pagas</string>
+    <string name="app_name">Salario Neto</string>
+    
+    <string name="acerca1">"<i><b>Versión 1.0.2 </b></i>"</string>
+    
+    <string name="acerca2">- Fix para JellyBean\n
+        - Correccion errores varios\n
+        - Ajustes menores de estilo\n\n        
+        <i><b>Versión 1.0.1</b></i>\n
+        - Agregado calculo reduccion por rtos trabajo de caracter general\n
+        - Redondeo del tipo de IRPF\n
+        - Deduccion del art.80 bis de la LIRPF\n\n
+        <i><b>Versión 1.0</b></i>\n
+        Esta es una aplicación para calcular el sueldo neto y bruto 
+        en funcion a un salarario anual, numero de pagas, situacion familiar, etc... 
+        Esta actualizada a los tipos de IRPF para el 2012\n\n
+        En esta primera version faltan cosas por implementar:\n\n 
+        - Resto de situaciones familiares\n 
+        - Salarios superiores a 175.000€\n 
+        - Correccion de retenciones para contratos anteriores al 2012, donde en enero se utilizaba el IRPF 2011
+        - Otros cambios menores</string>
+        
+    <string name="contacto">Para cualquier sugerencia, fallo o información remitirse a ErmesCorp@gmail.com</string>
+    <!--Lista de categorias -->  
+    <string name="categoria1">Ingenieros y Licenciados</string>  
+    <string name="categoria2">Ing. Técnicos y Ayudantes Titulados</string>  
+    <string name="categoria3">Jefes Administrativos y de taller</string>  
+    <string name="categoria4">Ayudantes no Titulados</string>  
+    <string name="categoria5">Oficiales Administrativos</string>  
+    <string name="categoria6">Subalternos</string>  
+    <string name="categoria7">Auxiliares Administrativos</string>
+    <string name="laboral1">Empleado</string>  
+    <string name="laboral2">Pensionista de la Seg. Social</string>  
+    <string name="laboral3">Desempleado</string>  
+    <string name="laboral4">Otras situaciones</string>  
+</resources>
